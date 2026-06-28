@@ -316,6 +316,26 @@
   }
 
   /* -----------------------------------------------------------------
+     BEER-LIST EMBED — fit the Untappd box to its content height
+     (cross-origin, so we listen for a height postMessage and resize;
+     falls back to the tall CSS default if none arrives).
+  ----------------------------------------------------------------- */
+  function initEmbed() {
+    const box = $(".embed-frame");
+    const frame = box && $("iframe", box);
+    if (!frame) return;
+    window.addEventListener("message", (e) => {
+      if (e.source !== frame.contentWindow) return;
+      const d = e.data;
+      let h = null;
+      if (typeof d === "number") h = d;
+      else if (d && typeof d === "object") h = d.height || d.frameHeight || (d.untappd && d.untappd.height);
+      h = parseInt(h, 10);
+      if (h > 400 && h < 20000) box.style.height = h + "px";
+    });
+  }
+
+  /* -----------------------------------------------------------------
      BOOT
   ----------------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", () => {
@@ -330,6 +350,7 @@
     initAccordion();
     initMenuSpy();
     initTabs();
+    initEmbed();
     initYear();
     // refresh status every minute so it flips at open/close time
     setInterval(renderStatus, 60 * 1000);
