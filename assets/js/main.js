@@ -282,6 +282,40 @@
   }
 
   /* -----------------------------------------------------------------
+     TABS (Creekside menus) — accessible click + arrow-key switching
+  ----------------------------------------------------------------- */
+  function initTabs() {
+    $$("[data-tabs]").forEach((root) => {
+      const tabs   = $$('[role="tab"]', root);
+      const panels = $$('[role="tabpanel"]', root);
+      if (!tabs.length) return;
+
+      const select = (idx, focus) => {
+        tabs.forEach((t, i) => {
+          const on = i === idx;
+          t.classList.toggle("is-active", on);
+          t.setAttribute("aria-selected", String(on));
+          t.tabIndex = on ? 0 : -1;
+          if (on && focus) t.focus();
+        });
+        panels.forEach((p, i) => p.classList.toggle("is-active", i === idx));
+      };
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => select(i, false));
+        tab.addEventListener("keydown", (e) => {
+          let n = null;
+          if (e.key === "ArrowRight" || e.key === "ArrowDown") n = (i + 1) % tabs.length;
+          else if (e.key === "ArrowLeft" || e.key === "ArrowUp") n = (i - 1 + tabs.length) % tabs.length;
+          else if (e.key === "Home") n = 0;
+          else if (e.key === "End") n = tabs.length - 1;
+          if (n !== null) { e.preventDefault(); select(n, true); }
+        });
+      });
+    });
+  }
+
+  /* -----------------------------------------------------------------
      BOOT
   ----------------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", () => {
@@ -295,6 +329,7 @@
     initLightbox();
     initAccordion();
     initMenuSpy();
+    initTabs();
     initYear();
     // refresh status every minute so it flips at open/close time
     setInterval(renderStatus, 60 * 1000);
