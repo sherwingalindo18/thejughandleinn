@@ -1321,3 +1321,51 @@ strong { color: var(--text); }
 --------------------------------------------------------------------- */
 .masonry__item figcaption { display: none; }
 .masonry__item::after { display: none; }
+
+/* ---------------------------------------------------------------------
+   22. FORMS  (catering inquiry / job application)
+--------------------------------------------------------------------- */
+.form { max-width: 680px; margin-inline: auto; text-align: left; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; }
+.form__group { margin-bottom: 1.1rem; }
+.form label {
+  display: block;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-size: .78rem;
+  color: var(--text-soft);
+  margin-bottom: .45rem;
+}
+.form .req { color: var(--primary); }
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: .85rem 1rem;
+  background: rgba(255,255,255,.05);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font: inherit;
+  font-size: .98rem;
+  transition: border-color .2s, background .2s;
+}
+.form textarea { min-height: 140px; resize: vertical; }
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  background: rgba(255,255,255,.08);
+}
+.form ::placeholder { color: var(--text-soft); opacity: .65; }
+/* keep native dropdown options readable (light list on dark theme) */
+.form select option { color: #111; background: #fff; }
+.form__actions { text-align: center; margin-top: 1.5rem; }
+.form__note { margin-top: 1rem; font-size: .85rem; color: var(--text-soft); text-align: center; }
+.form__note a { color: var(--secondary); }
+
+@media (max-width: 620px) {
+  .form__row { grid-template-columns: 1fr; }
+}
