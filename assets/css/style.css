@@ -1178,3 +1178,34 @@ strong { color: var(--text); }
 .event-card__time svg { width: 16px; height: 16px; }
 .event-card__body p { color: var(--text-soft); font-size: .95rem; }
 .event-card__body .card__link { margin-top: auto; }
+
+/* ---------------------------------------------------------------------------
+   Print styles — used both when a visitor prints and to generate the
+   downloadable menu PDF (assets/menu/jughandle-menu.pdf). Strips the site
+   chrome so only the menu content remains.
+--------------------------------------------------------------------------- */
+@media print {
+  .site-header,
+  .menu-nav,
+  .site-footer,
+  .to-top,
+  .section--wood,
+  .page-hero__bg,
+  .no-print { display: none !important; }
+
+  body { background: #fff !important; color: #111 !important; }
+
+  .page-hero {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 0 .5rem !important;
+    background: #fff !important;
+  }
+  .page-hero__inner { padding: 0 !important; }
+  .page-hero h1 { color: #111 !important; }
+
+  .section { padding: 0 !important; }
+
+  /* Avoid splitting a menu category awkwardly across pages. */
+  .menu-group { break-inside: avoid; page-break-inside: avoid; }
+}
