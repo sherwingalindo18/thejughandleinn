@@ -309,8 +309,11 @@
         });
       };
 
-      // Reveal whichever panel is active on load so it's never blank.
-      panels.forEach((p) => { if (p.classList.contains("is-active")) reveal(p); });
+      // The tabs block can be taller than the viewport, so a scroll-reveal
+      // would never fire on it (it could never be 12% in view). Make the whole
+      // block and its active panel visible right away.
+      root.classList.add("in");
+      reveal(root);
 
       tabs.forEach((tab, i) => {
         tab.addEventListener("click", () => select(i, false));
