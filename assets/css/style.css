@@ -1310,3 +1310,9 @@ strong { color: var(--text); }
 @media (max-width: 620px) {
   .tabs__tab { flex: 1 1 100%; }
 }
+
+/* ---------------------------------------------------------------------
+   21. GALLERY HOVER — image only, no caption text overlay on hover
+--------------------------------------------------------------------- */
+.masonry__item figcaption { display: none; }
+.masonry__item::after { display: none; }
