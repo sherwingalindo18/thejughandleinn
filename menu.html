@@ -96,15 +96,22 @@
     <p class="breadcrumb"><a href="index.html">Home</a> / The Menu</p>
     <span class="eyebrow">Originated in Buffalo, perfected in Cinnaminson</span>
     <h1>The Jug Handle Menu</h1>
-    <p class="page-hero__actions no-print" style="margin-top:1.4rem">
-      <a class="btn btn--gold" href="assets/menu/jughandle-menu.pdf" download target="_blank" rel="noopener" style="white-space:nowrap">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        Download Menu (PDF)
-      </a>
-    </p>
   </div>
 </section>
 
+<section class="section section--wood">
+  <div class="container">
+    <div class="section-head center" data-reveal><span class="eyebrow">Eat &middot; Drink &middot; Specials</span><h2>The Menu</h2><p>Tap a tab to switch between our food menu, specials and drinks.</p></div>
+    <div class="tabs" data-tabs data-reveal>
+      <div class="tabs__nav" role="tablist" aria-label="Jug Handle menus">
+        <button class="tabs__tab is-active" type="button" role="tab" id="mtab-menu" aria-controls="mpanel-menu" aria-selected="true">Menu</button>
+        <button class="tabs__tab" type="button" role="tab" id="mtab-specials" aria-controls="mpanel-specials" aria-selected="false" tabindex="-1">Specials</button>
+        <button class="tabs__tab" type="button" role="tab" id="mtab-drinks" aria-controls="mpanel-drinks" aria-selected="false" tabindex="-1">Drink Menu</button>
+      </div>
+
+      <!-- ===== MENU ===== -->
+      <div class="tabs__panel is-active" role="tabpanel" id="mpanel-menu" aria-labelledby="mtab-menu" tabindex="0">
+        <div class="tabs__download"><a class="btn btn--gold btn--sm" href="assets/menu/jughandle-menu.pdf" download target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download Food Menu (PDF)</a></div>
 <nav class="menu-nav" aria-label="Menu sections"><div class="container"><ul><li><a href="#soup" data-spy>Soup</a></li><li><a href="#salads" data-spy>Salads</a></li><li><a href="#starters" data-spy>Starters</a></li><li><a href="#baskets" data-spy>Baskets</a></li><li><a href="#wings" data-spy>Wings</a></li><li><a href="#nachos" data-spy>Nachos</a></li><li><a href="#fries" data-spy>Fries</a></li><li><a href="#quesadillas" data-spy>Quesadillas</a></li><li><a href="#burgers" data-spy>Burgers</a></li><li><a href="#sandwiches" data-spy>Sandwiches</a></li><li><a href="#clubs" data-spy>Clubs</a></li><li><a href="#chicken" data-spy>Chicken</a></li><li><a href="#steaks" data-spy>Steaks</a></li><li><a href="#pizza" data-spy>Pizza</a></li><li><a href="#entrees" data-spy>Entrées</a></li><li><a href="#desserts" data-spy>Desserts</a></li><li><a href="#drinks" data-spy>Drinks</a></li></ul></div></nav>
 
 <section class="section">
@@ -120,6 +127,27 @@
       <ul class="measure" style="color:var(--text-soft)"><li style="padding:.5rem 0;border-bottom:1px solid var(--border)">The restaurant is run for the enjoyment of our guests — if something&rsquo;s not right, let us fix it.</li><li style="padding:.5rem 0;border-bottom:1px solid var(--border)">Beef is tasty because it has some fat. Want lean? Order the turkey.</li><li style="padding:.5rem 0;border-bottom:1px solid var(--border)">Our portions — especially salads, sandwiches and fries — are excessive, because nothing succeeds like excess.</li><li style="padding:.5rem 0;border-bottom:1px solid var(--border)">We&rsquo;re serious about food, but not much else. Relax and have a good time!</li><li style="padding:.5rem 0;border-bottom:1px solid var(--border)">Please don&rsquo;t drink and drive. It&rsquo;s the other thing we take seriously at The Jug.</li></ul>
       <p style="margin-top:1.4rem;font-family:var(--font-script);font-size:1.5rem;color:var(--secondary)">Thank you — Kevin &amp; Nichole</p>
     </section>
+  </div>
+</section>
+      </div><!-- /menu panel -->
+
+      <!-- ===== SPECIALS ===== -->
+      <div class="tabs__panel" role="tabpanel" id="mpanel-specials" aria-labelledby="mtab-specials" tabindex="0">
+        <div class="container" style="max-width:760px;padding-inline:0">
+          <section class="menu-group" data-reveal><div class="menu-group__head"><h2>Happy Hour</h2></div><p class="menu-group__note">Monday&ndash;Thursday, 3&ndash;6 PM at the bar.</p><div class="menu-list"><div class="menu-item"><span class="menu-item__name">Daily Drink Specials</span><span class="menu-item__price">Every Day</span><p class="menu-item__desc">We run rotating drink specials all week long. Ask your bartender for today&rsquo;s lineup, or check our Facebook for the latest.</p></div></div></section>
+          <section class="menu-group" data-reveal><div class="menu-group__head"><h2>Weekend at the Creekside</h2></div><p class="menu-group__note">Seasonal weekend drink specials on the water &mdash; T.G.I. Friday, Super Saturday and Sunday Funday.</p><div class="text-center" style="margin-top:1.2rem"><a class="btn btn--ghost" href="creekside.html#ckpanel-specials">See Creekside Specials <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+        </div>
+      </div><!-- /specials panel -->
+
+      <!-- ===== DRINK MENU ===== -->
+      <div class="tabs__panel" role="tabpanel" id="mpanel-drinks" aria-labelledby="mtab-drinks" tabindex="0">
+        <div class="tabs__download"><a class="btn btn--gold btn--sm" href="https://business.untappd.com/embeds/iframes/5327/17586" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h11v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2Z"/><path d="M17 13h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2"/><path d="M6 11a3 3 0 0 1 0-6 3 3 0 0 1 5-2 3 3 0 0 1 4 2 2.5 2.5 0 0 1 2 4"/></svg> Untapped Drinks Menu</a></div>
+        <div class="embed-frame" data-reveal>
+          <iframe title="The Jug Handle Inn live drink menu" src="https://business.untappd.com/embeds/iframes/5327/17586" loading="lazy"></iframe>
+        </div>
+        <p class="text-center" style="margin-top:1rem;font-size:.85rem;color:var(--text-soft)">Powered by Untappd — drinks, wine, drafts and bottles, updated live as they change.</p>
+      </div><!-- /drinks panel -->
+    </div><!-- /tabs -->
   </div>
 </section>
 
