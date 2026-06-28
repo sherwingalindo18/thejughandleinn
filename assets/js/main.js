@@ -109,9 +109,9 @@
     );
     // close on link click
     $$("a", links).forEach((a) => a.addEventListener("click", () => setOpen(false)));
-    // close on resize up to desktop
+    // close on resize up to desktop (matches the CSS hamburger breakpoint)
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 920) setOpen(false);
+      if (window.innerWidth > 1300) setOpen(false);
     });
     // close on Escape
     document.addEventListener("keydown", (e) => {

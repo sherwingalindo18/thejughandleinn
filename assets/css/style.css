@@ -241,6 +241,12 @@ strong { color: var(--text); }
 
 .btn--lg { padding: 1.1rem 2.3rem; font-size: 1rem; }
 .btn--sm { padding: .6rem 1.1rem; font-size: .8rem; }
+
+/* Inline icon sizing — keep SVG icons proportional to their text so they
+   never expand to their intrinsic size (esp. on narrow mobile buttons). */
+.btn svg { width: 1.05em; height: 1.05em; flex: 0 0 auto; }
+.card__link svg { width: 1.05em; height: 1.05em; flex: 0 0 auto; vertical-align: middle; }
+.to-top svg { width: 22px; height: 22px; }
 .btn .ico { width: 1em; height: 1em; }
 
 /* ---------------------------------------------------------------------
@@ -270,6 +276,9 @@ strong { color: var(--text); }
   gap: var(--space-4);
   width: 100%;
 }
+/* The header bar may span wider than the 1240px content container so the
+   full inline nav has room before it collapses to the hamburger. */
+.site-header .nav { max-width: 1480px; }
 .nav__brand {
   display: flex;
   align-items: center;
@@ -299,7 +308,7 @@ strong { color: var(--text); }
 .nav__links {
   display: flex;
   align-items: center;
-  gap: clamp(.4rem, 1.4vw, 1.1rem);
+  gap: clamp(.3rem, .9vw, .8rem);
 }
 .nav__links a {
   position: relative;
@@ -307,10 +316,10 @@ strong { color: var(--text); }
   font-family: var(--font-display);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: .82rem;
+  letter-spacing: .6px;
+  font-size: .78rem;
   color: var(--text);
-  padding: .4rem .15rem;
+  padding: .4rem .12rem;
   transition: color .2s;
 }
 .nav__links a::after {
@@ -943,10 +952,17 @@ strong { color: var(--text); }
 --------------------------------------------------------------------- */
 @media (max-width: 1080px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .nav__links a { font-size: .78rem; }
 }
 
-@media (max-width: 920px) {
+/* The in-header status pill is redundant with the footer/hero status, so it
+   is hidden once horizontal space gets tight (it returns on wide desktops). */
+@media (max-width: 1439px) {
+  .site-header .nav__actions .status { display: none; }
+}
+
+/* Collapse the 11-link bar into the hamburger menu well before it would
+   crowd the logo. Phones, tablets and small laptops all get the drawer. */
+@media (max-width: 1300px) {
   :root { --header-h: 70px; }
 
   .nav__toggle { display: block; }
@@ -958,15 +974,28 @@ strong { color: var(--text); }
     gap: 0;
     background: rgba(12,11,10,.97);
     backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 1.2rem 1.6rem;
+    /* No vertical padding/border while closed so border-box can fully
+       collapse the drawer to 0 height (otherwise the first link bleeds out). */
+    padding: 0 1.2rem;
+    border-bottom: 0 solid var(--border);
     max-height: 0; overflow: hidden;
     transition: max-height .4s var(--ease);
   }
-  .nav__links.open { max-height: 78vh; overflow-y: auto; }
-  .nav__links a { padding: .9rem .4rem; border-bottom: 1px solid var(--border); font-size: 1rem; }
+  .nav__links.open {
+    max-height: 80vh; overflow-y: auto;
+    padding: 1rem 1.2rem 1.6rem;
+    border-bottom-width: 1px;
+  }
+  .nav__links a {
+    padding: .9rem .4rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
   .nav__links a::after { display: none; }
+}
 
+@media (max-width: 920px) {
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .split { grid-template-columns: 1fr; }
   .split--reverse .split__media { order: 0; }
@@ -981,6 +1010,18 @@ strong { color: var(--text); }
   .hero__cta .btn { justify-content: center; }
   .nav__brand-text { display: none; }
   .lightbox__prev { left: 1rem; } .lightbox__next { right: 1rem; }
+
+  /* Let long menu-section headings wrap instead of overflowing the screen. */
+  .menu-group__head { flex-wrap: wrap; }
+  .menu-group__head h2 { white-space: normal; }
+}
+
+/* Very small phones — keep the header CTA compact so the logo + Order Online
+   + hamburger always fit on one row without overflow. */
+@media (max-width: 400px) {
+  .nav__actions { gap: .5rem; }
+  .nav__actions .btn--sm { padding: .55rem .8rem; font-size: .72rem; letter-spacing: .5px; }
+  .nav__brand img { height: 42px; }
 }
 
 /* ---------------------------------------------------------------------
