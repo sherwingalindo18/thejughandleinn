@@ -290,6 +290,10 @@
       const panels = $$('[role="tabpanel"]', root);
       if (!tabs.length) return;
 
+      // Tab content should be visible the moment its tab is shown — don't make
+      // it wait for a scroll-reveal (that left the active panel looking empty).
+      const reveal = (panel) => $$("[data-reveal]", panel).forEach((el) => el.classList.add("in"));
+
       const select = (idx, focus) => {
         tabs.forEach((t, i) => {
           const on = i === idx;
@@ -298,8 +302,15 @@
           t.tabIndex = on ? 0 : -1;
           if (on && focus) t.focus();
         });
-        panels.forEach((p, i) => p.classList.toggle("is-active", i === idx));
+        panels.forEach((p, i) => {
+          const on = i === idx;
+          p.classList.toggle("is-active", on);
+          if (on) reveal(p);
+        });
       };
+
+      // Reveal whichever panel is active on load so it's never blank.
+      panels.forEach((p) => { if (p.classList.contains("is-active")) reveal(p); });
 
       tabs.forEach((tab, i) => {
         tab.addEventListener("click", () => select(i, false));
