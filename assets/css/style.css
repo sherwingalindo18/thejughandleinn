@@ -868,15 +868,14 @@ strong { color: var(--text); }
 /* iframe (untappd / order) wrapper */
 .embed-frame {
   width: 100%; max-width: 860px; margin-inline: auto;
-  /* Tall by default so the live menu shows without an inner scrollbar;
-     main.js fine-tunes this to the real content height when Untappd
-     reports it via postMessage. */
-  height: 2600px;
   border: 1px solid var(--border); border-radius: var(--radius);
   overflow: hidden; background: #fff;
 }
-.embed-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
-@media (max-width: 620px) { .embed-frame { height: 3600px; } }
+/* The Untappd init script (and our postMessage listener) resize this iframe to
+   its real content height so there's no inner scrollbar — the page scrolls
+   instead. The fixed height here is only a pre-resize fallback. */
+.embed-frame iframe { width: 100%; height: 2400px; border: 0; display: block; }
+@media (max-width: 620px) { .embed-frame iframe { height: 3400px; } }
 
 /* ---------------------------------------------------------------------
    16. FOOTER & BACK-TO-TOP

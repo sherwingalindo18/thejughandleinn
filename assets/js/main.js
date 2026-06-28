@@ -345,7 +345,7 @@
       if (typeof d === "number") h = d;
       else if (d && typeof d === "object") h = d.height || d.frameHeight || (d.untappd && d.untappd.height);
       h = parseInt(h, 10);
-      if (h > 400 && h < 20000) box.style.height = h + "px";
+      if (h > 400 && h < 20000) frame.style.height = h + "px";
     });
   }
 
