@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=20260628d">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260628e">
 
   <script type="application/ld+json">{
   "@context":"https://schema.org",
@@ -92,7 +92,12 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <img src="assets/images/general/hero-home.jpg" alt="The Jug Handle Inn bar interior" class="hero__bg" loading="eager" >
+  <div class="hero__slides" aria-hidden="true">
+    <img class="hero__slide is-active" src="assets/images/hero/home-1.jpg" alt="" loading="eager" fetchpriority="high">
+    <img class="hero__slide" src="assets/images/hero/home-2.jpg" alt="" loading="lazy">
+    <img class="hero__slide" src="assets/images/hero/home-3.jpg" alt="" loading="lazy">
+    <img class="hero__slide" src="assets/images/hero/home-4.jpg" alt="" loading="lazy">
+  </div>
   <div class="container">
     <div class="hero__inner">
       <span class="eyebrow">Cinnaminson&rsquo;s home for&hellip;</span>
@@ -297,6 +302,6 @@
 </footer>
 
 <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
-<script src="assets/js/main.js?v=20260628d"></script>
+<script src="assets/js/main.js?v=20260628e"></script>
 </body>
 </html>

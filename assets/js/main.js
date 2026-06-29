@@ -350,6 +350,22 @@
   }
 
   /* -----------------------------------------------------------------
+     HERO SLIDESHOW — crossfade through the hero images
+  ----------------------------------------------------------------- */
+  function initHeroSlides() {
+    const slides = $$(".hero__slide");
+    if (slides.length < 2) return;
+    // Respect reduced-motion: keep the first image, no auto-rotation.
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.remove("is-active");
+      i = (i + 1) % slides.length;
+      slides[i].classList.add("is-active");
+    }, 5000);
+  }
+
+  /* -----------------------------------------------------------------
      BOOT
   ----------------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", () => {
@@ -365,6 +381,7 @@
     initMenuSpy();
     initTabs();
     initEmbed();
+    initHeroSlides();
     initYear();
     // refresh status every minute so it flips at open/close time
     setInterval(renderStatus, 60 * 1000);
