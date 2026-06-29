@@ -366,6 +366,36 @@
   }
 
   /* -----------------------------------------------------------------
+     CAROUSEL — horizontal scrolling gallery (arrows + autoplay)
+  ----------------------------------------------------------------- */
+  function initCarousel() {
+    $$("[data-carousel]").forEach((car) => {
+      const track = $(".carousel__track", car);
+      if (!track) return;
+      const prev = $(".carousel__btn--prev", car);
+      const next = $(".carousel__btn--next", car);
+      const step = () => Math.min(track.clientWidth * 0.85, 460);
+      const atEnd = () => track.scrollLeft + track.clientWidth >= track.scrollWidth - 6;
+
+      if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+      if (next) next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+
+      // Auto-advance (skipped for reduced-motion users)
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      let timer = null;
+      const advance = () => {
+        if (atEnd()) track.scrollTo({ left: 0, behavior: "smooth" });
+        else track.scrollBy({ left: step(), behavior: "smooth" });
+      };
+      const start = () => { if (!timer) timer = setInterval(advance, 3500); };
+      const stop = () => { clearInterval(timer); timer = null; };
+      start();
+      ["mouseenter", "focusin", "touchstart"].forEach((e) => car.addEventListener(e, stop, { passive: true }));
+      ["mouseleave", "touchend"].forEach((e) => car.addEventListener(e, start, { passive: true }));
+    });
+  }
+
+  /* -----------------------------------------------------------------
      BOOT
   ----------------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", () => {
@@ -382,6 +412,7 @@
     initTabs();
     initEmbed();
     initHeroSlides();
+    initCarousel();
     initYear();
     // refresh status every minute so it flips at open/close time
     setInterval(renderStatus, 60 * 1000);
