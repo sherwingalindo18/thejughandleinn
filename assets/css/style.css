@@ -82,7 +82,7 @@
   --shadow:   0 18px 50px -12px rgba(0, 0, 0, .65);
   --shadow-sm:0 8px 24px -10px rgba(0, 0, 0, .6);
   --maxw:     1240px;
-  --header-h: 78px;
+  --header-h: 90px;
   --ease:     cubic-bezier(.22, .61, .36, 1);
 }
 
@@ -285,7 +285,7 @@ strong { color: var(--text); }
   gap: .7rem;
   margin-right: auto;
 }
-.nav__brand img { height: 50px; width: auto; filter: drop-shadow(0 3px 6px rgba(0,0,0,.5)); }
+.nav__brand img { height: 68px; width: auto; filter: drop-shadow(0 3px 6px rgba(0,0,0,.5)); }
 .nav__brand-text {
   font-family: var(--font-display);
   font-weight: 700;
@@ -967,7 +967,7 @@ strong { color: var(--text); }
 /* Collapse the 11-link bar into the hamburger menu well before it would
    crowd the logo. Phones, tablets and small laptops all get the drawer. */
 @media (max-width: 1300px) {
-  :root { --header-h: 70px; }
+  :root { --header-h: 80px; }
 
   .nav__toggle { display: block; }
   .nav__links {
@@ -1025,7 +1025,7 @@ strong { color: var(--text); }
 @media (max-width: 400px) {
   .nav__actions { gap: .5rem; }
   .nav__actions .btn--sm { padding: .55rem .8rem; font-size: .72rem; letter-spacing: .5px; }
-  .nav__brand img { height: 42px; }
+  .nav__brand img { height: 56px; }
 }
 
 /* ---------------------------------------------------------------------
