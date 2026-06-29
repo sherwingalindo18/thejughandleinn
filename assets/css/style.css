@@ -615,6 +615,9 @@ strong { color: var(--text); }
 .contact-card a.phone:hover { color: var(--primary); }
 .contact-card .email { color: var(--text-dark-soft); font-weight: 600; }
 .contact-card .email:hover { color: var(--primary); }
+/* Ghost button sits on the light contact card, so give it a visible default */
+.contact-card .btn--ghost { color: var(--secondary); border-color: var(--secondary); }
+.contact-card .btn--ghost:hover { background: var(--secondary); color: #1a1207; border-color: var(--secondary); }
 
 /* ---------------------------------------------------------------------
    11. MENU / PRICE ROWS
