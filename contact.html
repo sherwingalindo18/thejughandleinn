@@ -138,11 +138,12 @@
       <h2>Send us a message</h2>
       <p class="measure mx-auto">Questions, feedback or a private-party idea? Send it over and we&rsquo;ll get back to you.</p>
     </div>
-    <form class="form" data-reveal action="https://formsubmit.co/nichole@thejughandleinn.com" method="POST">
-      <input type="hidden" name="_subject" value="New Contact Message — The Jug Handle Inn website">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+    <form class="form" data-reveal action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New Contact Message — The Jug Handle Inn website">
+      <input type="hidden" name="from_name" value="The Jug Handle Inn Website">
+      <!-- Replies go to nichole@thejughandleinn.com (set on the Web3Forms access key) -->
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
       <div class="form__row">
         <div class="form__group"><label for="ct-name">Name <span class="req">*</span></label><input id="ct-name" type="text" name="Name" autocomplete="name" required></div>
         <div class="form__group"><label for="ct-phone">Phone</label><input id="ct-phone" type="tel" name="Phone" autocomplete="tel"></div>

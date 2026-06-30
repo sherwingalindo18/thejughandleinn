@@ -142,11 +142,12 @@
       <h2>Join our team</h2>
       <p class="measure mx-auto">Tell us a little about yourself and what you&rsquo;re looking for. We&rsquo;ll be in touch.</p>
     </div>
-    <form class="form" data-reveal action="https://formsubmit.co/nichole@thejughandleinn.com" method="POST">
-      <input type="hidden" name="_subject" value="New Job Application — The Jug Handle Inn website">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+    <form class="form" data-reveal action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New Job Application — The Jug Handle Inn website">
+      <input type="hidden" name="from_name" value="The Jug Handle Inn Website">
+      <!-- Replies go to nichole@thejughandleinn.com (set on the Web3Forms access key) -->
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
       <div class="form__row">
         <div class="form__group"><label for="h-name">Name <span class="req">*</span></label><input id="h-name" type="text" name="Name" autocomplete="name" required></div>
         <div class="form__group"><label for="h-phone">Phone <span class="req">*</span></label><input id="h-phone" type="tel" name="Phone" autocomplete="tel" required></div>
