@@ -161,7 +161,8 @@
         const p = Math.min((t - start) / dur, 1);
         const eased = 1 - Math.pow(1 - p, 3);
         const val = target % 1 ? (target * eased).toFixed(1) : Math.round(target * eased);
-        el.textContent = val.toLocaleString() + suffix;
+        const out = el.hasAttribute("data-plain") ? String(val) : val.toLocaleString();
+        el.textContent = out + suffix;
         if (p < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
