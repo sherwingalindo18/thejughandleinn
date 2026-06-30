@@ -908,8 +908,8 @@ strong { color: var(--text); }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 2.5rem;
+  grid-template-columns: 1.3fr 0.85fr 1.5fr 1.1fr;
+  gap: 2.2rem;
 }
 .footer-brand img { height: 88px; width: auto; margin-bottom: 1rem; }
 .footer-brand p { font-size: .92rem; max-width: 32ch; }
@@ -920,7 +920,8 @@ strong { color: var(--text); }
 .footer-col ul { display: grid; gap: .6rem; }
 .footer-col a { color: var(--text-soft); font-size: .94rem; transition: .2s; }
 .footer-col a:hover { color: var(--secondary); }
-.footer-hours li { display: flex; justify-content: space-between; gap: 1rem; font-size: .9rem; color: var(--text-soft); }
+.footer-hours li { display: flex; justify-content: space-between; gap: .9rem; font-size: .84rem; color: var(--text-soft); white-space: nowrap; }
+.footer-hours li span { white-space: nowrap; }
 .footer-hours li span:last-child { color: var(--secondary); font-family: var(--font-display); }
 
 .socials { display: flex; gap: .7rem; margin-top: 1.2rem; }
