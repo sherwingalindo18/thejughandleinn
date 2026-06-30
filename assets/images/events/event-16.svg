@@ -18,7 +18,7 @@
 <circle cx="627.0" cy="560" r="150" fill="none" stroke="#E6A532" stroke-width="8"></circle>
 <path d="M 572.0 490 v150 a40 40 0 1 1 -40 -40 a40 40 0 0 1 40 12 v-92 l120 -30 v118 a40 40 0 1 1 -40 -40 a40 40 0 0 1 40 12 v-118 z" fill="#F4EFE3" fill-opacity="0.9"></path>
 </g>
-<text x="627.0" y="800" font-family="Oswald, sans-serif" font-weight="700" font-size="85" letter-spacing="2" fill="#F4EFE3" text-anchor="middle">SHELTER IN PLACE TRIO</text>
+<text x="627.0" y="800" font-family="Oswald, sans-serif" font-weight="700" font-size="84" letter-spacing="2" fill="#F4EFE3" text-anchor="middle">SHELTER IN PLACE TRIO</text>
 <rect x="327.0" y="858" width="600" height="3" fill="#E6A532"></rect>
 <text x="627.0" y="970" font-family="Oswald, sans-serif" font-weight="600" font-size="70" letter-spacing="8" fill="#E6A532" text-anchor="middle">SATURDAY · Aug 29</text>
 <text x="627.0" y="1052" font-family="Manrope, sans-serif" font-weight="700" font-size="40" letter-spacing="6" fill="#F4EFE3" fill-opacity="0.85" text-anchor="middle">5:00 – 9:00 PM</text>
