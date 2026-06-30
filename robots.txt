@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.thejughandleinn.com/sitemap.xml
+Sitemap: https://digitaloneweb.github.io/theJugHandleInn/sitemap.xml
